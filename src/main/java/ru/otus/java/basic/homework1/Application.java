@@ -75,6 +75,7 @@ public class Application {
             System.out.println("a < b");
         }
     }
+
     // Задача (5)
     public static void addOrSubtractAndPrint(int initValue, int delta, boolean increment) {
         if (increment) {
