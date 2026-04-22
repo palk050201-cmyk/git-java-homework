@@ -20,18 +20,18 @@ public class Application {
             System.out.println("Введите тип массива: 1- квадратный, 2 - прямоугольный");
             int type = scanner.nextInt();
             if (taskNumber == 1) {
-                sumOfPositiveElements(generateAndPrintRandomArray(type));
+                System.out.println(sumOfPositiveElements(generateAndPrintRandomArray(type)));
             } else if (taskNumber == 4) {
-                findMax(generateAndPrintRandomArray(type));
+                System.out.println(findMax(generateAndPrintRandomArray(type)));
             } else {
-                sumOfSecondRow(generateAndPrintRandomArray(type));
+                System.out.println(sumOfSecondRow(generateAndPrintRandomArray(type)));
             }
         }
     }
 
 
     // Задача 1
-    private static void sumOfPositiveElements(int[][] array) {
+    private static int sumOfPositiveElements(int[][] array) {
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
@@ -40,8 +40,7 @@ public class Application {
                 }
             }
         }
-        System.out.println("sum = " + sum);
-        System.out.println();
+        return sum;
     }
 
 
@@ -72,7 +71,7 @@ public class Application {
     }
 
     //Задача 4
-    public static void findMax(int[][] array) {
+    public static int findMax(int[][] array) {
         int max = array[0][0];
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
@@ -81,11 +80,11 @@ public class Application {
                 }
             }
         }
-        System.out.println("Max: " + max);
+        return max;
     }
 
     //Задача 5
-    public static void sumOfSecondRow(int[][] array) {
+    public static int sumOfSecondRow(int[][] array) {
         int sum = 0;
         if (array.length >= 2) {
             for (int i = 0; i < array[1].length; i++) {
@@ -94,7 +93,7 @@ public class Application {
         } else {
             sum = -1;
         }
-        System.out.println("sumOfSecondRow = " + sum);
+        return sum;
     }
 
 
