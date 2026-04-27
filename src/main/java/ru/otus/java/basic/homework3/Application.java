@@ -13,8 +13,8 @@ public class Application {
         if (taskNumber == 2) {
             System.out.println("Введите размер n*n массива: ");
             int size = scanner.nextInt();
-            String[][] stirngArray = generateSquareArray(size);
-            printArray(stirngArray);
+            String[][] stringArray = generateSquareArray(size);
+            printArray(stringArray);
 
         } else if (taskNumber == 3) {
             int [][] array = generateRandomArray(1);
