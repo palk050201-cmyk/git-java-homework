@@ -13,18 +13,28 @@ public class Application {
         if (taskNumber == 2) {
             System.out.println("Введите размер n*n массива: ");
             int size = scanner.nextInt();
-            generateAndPrintSquareArray(size);
+            String[][] stirngArray = generateSquareArray(size);
+            printArray(stirngArray);
+
         } else if (taskNumber == 3) {
-            removeDiagonalAndPrintArray(generateAndPrintRandomArray(1));
+            int [][] array = generateRandomArray(1);
+            printArray(array);
+            printArray(zeroDiagonal(array));
         } else {
             System.out.println("Введите тип массива: 1- квадратный, 2 - прямоугольный");
             int type = scanner.nextInt();
             if (taskNumber == 1) {
-                System.out.println(sumOfPositiveElements(generateAndPrintRandomArray(type)));
+                int [][] array = generateRandomArray(type);
+                printArray(array);
+                System.out.println(sumOfPositiveElements(array));
             } else if (taskNumber == 4) {
-                System.out.println(findMax(generateAndPrintRandomArray(type)));
+                int [][] array = generateRandomArray(type);
+                printArray(array);
+                System.out.println(findMax(array));
             } else {
-                System.out.println(sumOfSecondRow(generateAndPrintRandomArray(type)));
+                int [][] array = generateRandomArray(type);
+                printArray(array);
+                System.out.println(sumOfSecondRow(array));
             }
         }
     }
@@ -45,29 +55,27 @@ public class Application {
 
 
     // Задача 2
-    public static void generateAndPrintSquareArray(int size) {
+    public static String[][] generateSquareArray(int size) {
+        String[][] stringArray = new String[size][size];
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                System.out.print("* ");
+                stringArray[i][j] = "* ";
             }
-            System.out.println();
         }
-        System.out.println();
+        return stringArray;
     }
 
 
     // Задача 3
-    public static void removeDiagonalAndPrintArray(int[][] array) {
+    public static int[][] zeroDiagonal(int[][] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 if (i == j) {
                     array[i][j] = 0;
                 }
-                System.out.print(array[i][j] + " ");
             }
-            System.out.println();
         }
-        System.out.println("-----------------");
+        return array;
     }
 
     //Задача 4
@@ -97,21 +105,19 @@ public class Application {
     }
 
 
-    public static int[][] generateAndPrintRandomArray(int type) {
+    public static int[][] generateRandomArray(int type) {
         if (type == 1) {
             int size = 0;
             while (size < 2) {
                 size = (int) (Math.random() * 10);
+                System.out.println(size);
             }
             int[][] array = new int[size][size];
             for (int i = 0; i < size; i++) {
                 for (int j = 0; j < size; j++) {
                     array[i][j] = (int) (Math.random() * 10 - 5);
-                    System.out.print(array[i][j] + " ");
                 }
-                System.out.println();
             }
-            System.out.println("-----------------");
             return array;
         } else {
             int rowCount = 0;
@@ -126,13 +132,30 @@ public class Application {
             for (int i = 0; i < rowCount; i++) {
                 for (int j = 0; j < columnCount; j++) {
                     array[i][j] = (int) (Math.random() * 10 - 5);
-                    System.out.print(array[i][j] + " ");
                 }
-                System.out.println();
             }
-            System.out.println("-----------------");
             return array;
         }
+    }
+
+
+    public static void printArray(int[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("-----------------");
+    }
+    public static void printArray(String[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("-----------------");
     }
 
 }
