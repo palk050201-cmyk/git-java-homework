@@ -10,11 +10,11 @@ public class Box {
 
 
     public void open(){
-        this.opened = true;
+        opened = true;
     }
 
     public  void close(){
-        this.opened = false;
+        opened = false;
     }
 
     public void setColour(String colour){
