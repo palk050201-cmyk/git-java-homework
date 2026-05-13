@@ -13,40 +13,40 @@ public class Application {
 
 
         System.out.println("-----------------------------");
-        dog.run(10);
+        System.out.println(dog.run(10));
         dog.getInfo();
         System.out.println();
-        dog.run(30);
+        System.out.println(dog.run(30));
         dog.getInfo();
         System.out.println();
-        dog.swim(30);
+        System.out.println(dog.swim(30));
         dog.getInfo();
         System.out.println();
-        dog.swim(30);
+        System.out.println(dog.swim(30));
         dog.getInfo();
 
 
         System.out.println("-----------------------------");
-        horse.run(10);
+        System.out.println(horse.run(10));
         horse.getInfo();
         System.out.println();
-        horse.run(30);
+        System.out.println(horse.run(30));
         horse.getInfo();
         System.out.println();
-        horse.swim(30);
+        System.out.println(horse.swim(30));
         horse.getInfo();
 
         System.out.println("-----------------------------");
-        cat.run(10);
+        System.out.println(cat.run(10));
         cat.getInfo();
         System.out.println();
-        cat.run(50);
+        System.out.println(cat.run(50));
         cat.getInfo();
         System.out.println();
-        cat.run(60);
+        System.out.println(cat.run(60));
         cat.getInfo();
         System.out.println();
-        cat.run(5);
+        System.out.println(cat.run(5));
         cat.getInfo();
 
 

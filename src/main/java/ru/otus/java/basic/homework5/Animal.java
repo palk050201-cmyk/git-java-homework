@@ -14,16 +14,15 @@ public class Animal {
     }
 
 
-    public void run(int distance) {
+    public float run(int distance) {
         float time = 0f;
         int energyNeeded = distance * energyConsumptionForRunning;
         if (isEnoughEndurance(energyNeeded)) {
             endurance -= energyNeeded;
-            time = (float) (distance / runVelocity);
-            System.out.println(name + " пробежал " + distance + " м. за " + time + " секунд. Оставшаяся выносливость: " + endurance);
+            time = (float) distance / runVelocity;
+            return time;
         } else {
-            time = -1f;
-            System.out.println(name + " не хватило сил пробежать такое расстояние. Время: " + time);
+            return -1f;
         }
     }
 

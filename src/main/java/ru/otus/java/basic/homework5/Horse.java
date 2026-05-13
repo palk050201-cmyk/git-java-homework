@@ -4,16 +4,15 @@ public class Horse extends Animal{
     int swimVelocity;
     int energyConsumptionForSwimming = 4;
 
-    public void swim(int distance) {
+    public float swim(int distance) {
         float time = 0f;
         int energyNeeded = distance * energyConsumptionForSwimming;
         if (isEnoughEndurance(energyNeeded)) {
             endurance -= energyNeeded;
-            time = (float) (distance / swimVelocity);
-            System.out.println(name + " проплыть " + distance + " м. за " + time + " секунд. Оставшаяся выносливость: " + endurance);
+            time = (float) distance / swimVelocity;
+            return time;
         } else {
-            time = -1f;
-            System.out.println(name + " не хватило сил проплыть такое расстояние. Время: " + time);
+            return -1f;
         }
     }
 
