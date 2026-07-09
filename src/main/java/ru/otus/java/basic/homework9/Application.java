@@ -15,7 +15,7 @@ public class Application {
         taskNumber = scanner.nextInt();
 
         if (taskNumber == 1) {
-            System.out.println(getArrayList(3,10));
+            System.out.println(getArrayList(3, 10));
         } else if (taskNumber == 2) {
             System.out.println("Введите длину массива");
             System.out.println(sumArrayList(getArrayList(scanner.nextInt())));
@@ -57,20 +57,18 @@ public class Application {
             System.out.println(getYoungestEmployeeLink(list));
         }
 
-        }
+    }
 
-    public static ArrayList<Integer> getArrayList(int min, int max){
+    public static ArrayList<Integer> getArrayList(int min, int max) {
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = min; i < max + 1; i++) {
             list.add(i);
-            }
+        }
         return list;
     }
 
 
-
-
-    public static ArrayList<Integer> getArrayList(int a){
+    public static ArrayList<Integer> getArrayList(int a) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < a; i++) {
@@ -80,7 +78,7 @@ public class Application {
     }
 
 
-    public static int sumArrayList(ArrayList<Integer> list){
+    public static int sumArrayList(ArrayList<Integer> list) {
         int sum = 0;
         for (Integer intValue : list) {
             if (intValue > 5) {
@@ -90,14 +88,14 @@ public class Application {
         return sum;
     }
 
-    public static ArrayList<Integer> setArrayElements(ArrayList<Integer> list, int value){
+    public static ArrayList<Integer> setArrayElements(ArrayList<Integer> list, int value) {
         list.replaceAll(n -> value);
         return list;
     }
 
 
-    public static ArrayList<Integer> increaseArrayElements(ArrayList<Integer> list, int value){
-        list.replaceAll(n -> n+value);
+    public static ArrayList<Integer> increaseArrayElements(ArrayList<Integer> list, int value) {
+        list.replaceAll(n -> n + value);
         return list;
     }
 
@@ -122,18 +120,17 @@ public class Application {
 
     public static int getMiddleAge(ArrayList<Employee> list) {
         int sum = 0;
-        int middle;
         for (Employee employee : list) {
             sum += employee.getAge();
         }
-        middle = sum / list.size();
-        return middle;
+        return sum / list.size();
     }
 
     public static boolean checkMiddleAge(int middleAge, int introducedMiddleAge) {
         if (middleAge > introducedMiddleAge) {
             return true;
-        } return false;
+        }
+        return false;
     }
 
     public static Employee getYoungestEmployeeLink(ArrayList<Employee> list) {
@@ -147,7 +144,6 @@ public class Application {
         }
         return link;
     }
-
 
 
 }
