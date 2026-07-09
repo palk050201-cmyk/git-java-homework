@@ -6,18 +6,14 @@ import java.util.Scanner;
 
 public class Application {
 
-
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-
         String[][] array = new String[4][4];
 
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 array[i][j] = "13";
-
-
             }
         }
 
@@ -27,13 +23,7 @@ public class Application {
         } catch (AppArraySizeException e) {
             System.out.println(e.getMessage());
         }
-
-
-
-
-
     }
-
 
     public static void validateArraySize(String[][] table) {
         if (table.length != 4 || table[0].length != 4) {
@@ -50,14 +40,13 @@ public class Application {
                 try {
                     intArray[i][j] = Integer.parseInt(array[i][j]);
                 } catch (NumberFormatException e) {
-                    throw new AppArrayDataException("Неверный формат данных в ячейке " + i+1 + ", " + j+1);
+                    throw new AppArrayDataException("Неверный формат данных в ячейке " + i + 1 + ", " + j + 1);
                 }
                 sum += intArray[i][j];
             }
         }
         return sum;
     }
-
 }
 
 
